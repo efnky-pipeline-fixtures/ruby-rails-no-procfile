@@ -23,4 +23,4 @@ COPY --chown=rails:rails . .
 RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bundle exec rake assets:precompile
 EXPOSE 3000
 USER 1001
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb", "-p", "3000"]
+CMD ["/usr/local/bundle/bin/puma", "-C", "config/puma.rb", "-p", "3000"]
